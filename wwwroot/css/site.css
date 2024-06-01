@@ -1,0 +1,121 @@
+:root {
+    --cor1: rgb(205, 232, 229);
+    --cor2: rgb(238, 247, 255);
+    --cor3: rgb(122, 178, 178);
+    --cor4: rgb(77, 134, 156);
+}
+
+html {
+    font-size: 14px;
+}
+
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+
+
+
+
+
+/*Box Shadow*/
+.PrincipalBox {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 20px;
+}
+
+.PrincipalBox {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    background-color: var(--cor1);
+    border-radius: 15px;
+}
+
+    .PrincipalBox h1 {
+        text-align: left;
+        font-family: fantasy;
+        margin-left: 50px;
+        margin-top: 25px;
+        margin-bottom: -10px;
+    }
+
+    .PrincipalBox form {
+        width: 100%;
+    }
+
+    .PrincipalBox div {
+        margin: 20px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+        .PrincipalBox div div {
+            padding: 30px;
+            width: 500px;
+            max-height:100px;
+            display: flex;
+            justify-content: space-between;
+            background-color: var(--cor2);
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        }
+
+            .PrincipalBox div div input {
+                width: 300px;
+                height: 40px;
+                font-size: 15px;
+                font-family: Arial, Helvetica, sans-serif;
+                border-radius: 10px;
+            }
+
+            .PrincipalBox div div label {
+                margin: auto;
+                font-size: 20px;
+                font-family: Arial;
+                font-weight: bold;
+            }
+
+.PessoalNav {
+    background-color: var(--cor3);
+}
+
+#CreatePage {
+    display: flex;
+    justify-content: center;
+}
+
+#BotaoEnvio {
+   box-shadow:none;
+   background-color:var(--cor1);
+   display:flex;
+   justify-content:center;
+   
+}
+    #BotaoEnvio input {
+        background-color: white;
+        font-family: fantasy;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        height: 70px;
+        margin-top:-15px;
+    }
+    #BotaoEnvio input:hover {
+        background-color: var(--cor2);
+
+    }
