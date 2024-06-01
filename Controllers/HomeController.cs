@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using TrabalhoAed.Models;
 
@@ -20,13 +21,23 @@ namespace TrabalhoAed.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+
+            return View();
+        } 
+        
+        
+        [HttpGet]
+        public IActionResult Creating(int id)
+        {
+
             return View();
         }
+        
+       
         [HttpPost]
-        public IActionResult Create([FromForm] PeopleModel pessoa )
-        {   
-            DB db = new DB(PeopleFiles.GetFile(1));
-            db.Create(pessoa);
+        public IActionResult Creating(int id,[FromForm] PeopleModel pessoa )
+        {
+            Console.WriteLine(id);
             return View("Index");
         }
 

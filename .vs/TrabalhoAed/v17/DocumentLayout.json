@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{794D7CBC-0966-4904-B0D1-35C1B391046B}|TrabalhoAed.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{794D7CBC-0966-4904-B0D1-35C1B391046B}|TrabalhoAed.csproj|c:\\users\\saulo\\onedrive\\\u00E1rea de trabalho\\dev\\asp.net\\trabalhoaed\\models\\peoplemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{794D7CBC-0966-4904-B0D1-35C1B391046B}|TrabalhoAed.csproj|solutionrelative:models\\peoplemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{794D7CBC-0966-4904-B0D1-35C1B391046B}|TrabalhoAed.csproj|C:\\Users\\saulo\\OneDrive\\\u00C1rea de Trabalho\\DEV\\Asp.net\\TrabalhoAed\\views\\home\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{794D7CBC-0966-4904-B0D1-35C1B391046B}|TrabalhoAed.csproj|solutionrelative:views\\home\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{794D7CBC-0966-4904-B0D1-35C1B391046B}|TrabalhoAed.csproj|c:\\users\\saulo\\onedrive\\\u00E1rea de trabalho\\dev\\asp.net\\trabalhoaed\\views\\home\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{794D7CBC-0966-4904-B0D1-35C1B391046B}|TrabalhoAed.csproj|solutionrelative:views\\home\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{794D7CBC-0966-4904-B0D1-35C1B391046B}|TrabalhoAed.csproj|C:\\Users\\saulo\\OneDrive\\\u00C1rea de Trabalho\\DEV\\Asp.net\\TrabalhoAed\\views\\home\\creating.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{794D7CBC-0966-4904-B0D1-35C1B391046B}|TrabalhoAed.csproj|solutionrelative:views\\home\\creating.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,21 +21,36 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 263,
+          "SelectedChildIndex": 3,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\saulo\\OneDrive\\\u00C1rea de Trabalho\\DEV\\Asp.net\\TrabalhoAed\\Views\\Home\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Create.cshtml",
               "ToolTip": "C:\\Users\\saulo\\OneDrive\\\u00C1rea de Trabalho\\DEV\\Asp.net\\TrabalhoAed\\Views\\Home\\Create.cshtml",
               "RelativeToolTip": "Views\\Home\\Create.cshtml",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAAADEAAAAUAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-01T19:09:47.648Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-01T20:33:20.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Creating.cshtml",
+              "DocumentMoniker": "C:\\Users\\saulo\\OneDrive\\\u00C1rea de Trabalho\\DEV\\Asp.net\\TrabalhoAed\\Views\\Home\\Creating.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Creating.cshtml",
+              "ToolTip": "C:\\Users\\saulo\\OneDrive\\\u00C1rea de Trabalho\\DEV\\Asp.net\\TrabalhoAed\\Views\\Home\\Creating.cshtml",
+              "RelativeToolTip": "Views\\Home\\Creating.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-01T19:09:47.648Z"
             },
             {
               "$type": "Document",
@@ -45,32 +60,9 @@
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\saulo\\OneDrive\\\u00C1rea de Trabalho\\DEV\\Asp.net\\TrabalhoAed\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAmwCMAAAAAAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAADwvycAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-01T19:07:21.383Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PeopleModel.cs",
-              "DocumentMoniker": "C:\\Users\\saulo\\OneDrive\\\u00C1rea de Trabalho\\DEV\\Asp.net\\TrabalhoAed\\Models\\PeopleModel.cs",
-              "RelativeDocumentMoniker": "Models\\PeopleModel.cs",
-              "ToolTip": "C:\\Users\\saulo\\OneDrive\\\u00C1rea de Trabalho\\DEV\\Asp.net\\TrabalhoAed\\Models\\PeopleModel.cs",
-              "RelativeToolTip": "Models\\PeopleModel.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAABCwAoAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T19:08:40.197Z",
               "EditorCaption": ""
             }
           ]
