@@ -20,14 +20,13 @@ namespace TrabalhoAed.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            Console.WriteLine("oi");
-
             return View();
         }
         [HttpPost]
         public IActionResult Create([FromForm] PeopleModel pessoa )
-        {
-            Console.WriteLine(pessoa.DateOfBirth);
+        {   
+            DB db = new DB(PeopleFiles.GetFile(1));
+            db.Create(pessoa);
             return View("Index");
         }
 
