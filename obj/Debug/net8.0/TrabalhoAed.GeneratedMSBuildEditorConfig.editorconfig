@@ -9,43 +9,43 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TrabalhoAed
 build_property.RootNamespace = TrabalhoAed
-build_property.ProjectDir = C:\Users\saulo\OneDrive\Área de Trabalho\DEV\Asp.net\TopGameList\TrabalhoAed\
+build_property.ProjectDir = C:\Users\MathHRM\Documents\vsCode\c#\TrabalhoAed\SiteAED\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\saulo\OneDrive\Área de Trabalho\DEV\Asp.net\TopGameList\TrabalhoAed
+build_property.MSBuildProjectDirectory = C:\Users\MathHRM\Documents\vsCode\c#\TrabalhoAed\SiteAED
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/saulo/OneDrive/Área de Trabalho/DEV/Asp.net/TopGameList/TrabalhoAed/Views/Home/Create.cshtml]
+[C:/Users/MathHRM/Documents/vsCode/c\#/TrabalhoAed/SiteAED/Views/Home/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/saulo/OneDrive/Área de Trabalho/DEV/Asp.net/TopGameList/TrabalhoAed/Views/Home/Index.cshtml]
+[C:/Users/MathHRM/Documents/vsCode/c\#/TrabalhoAed/SiteAED/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/saulo/OneDrive/Área de Trabalho/DEV/Asp.net/TopGameList/TrabalhoAed/Views/Home/Privacy.cshtml]
+[C:/Users/MathHRM/Documents/vsCode/c\#/TrabalhoAed/SiteAED/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/saulo/OneDrive/Área de Trabalho/DEV/Asp.net/TopGameList/TrabalhoAed/Views/Shared/Error.cshtml]
+[C:/Users/MathHRM/Documents/vsCode/c\#/TrabalhoAed/SiteAED/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/saulo/OneDrive/Área de Trabalho/DEV/Asp.net/TopGameList/TrabalhoAed/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/MathHRM/Documents/vsCode/c\#/TrabalhoAed/SiteAED/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/saulo/OneDrive/Área de Trabalho/DEV/Asp.net/TopGameList/TrabalhoAed/Views/_ViewImports.cshtml]
+[C:/Users/MathHRM/Documents/vsCode/c\#/TrabalhoAed/SiteAED/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/saulo/OneDrive/Área de Trabalho/DEV/Asp.net/TopGameList/TrabalhoAed/Views/_ViewStart.cshtml]
+[C:/Users/MathHRM/Documents/vsCode/c\#/TrabalhoAed/SiteAED/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/saulo/OneDrive/Área de Trabalho/DEV/Asp.net/TopGameList/TrabalhoAed/Views/Shared/_Layout.cshtml]
+[C:/Users/MathHRM/Documents/vsCode/c\#/TrabalhoAed/SiteAED/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-zskts69fey
