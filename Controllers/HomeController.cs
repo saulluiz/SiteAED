@@ -16,10 +16,26 @@ namespace TrabalhoAed.Controllers
         public IActionResult Index()
         {
             return View();
-        } public IActionResult Create()
+        }
+        [HttpGet]
+        public IActionResult Create()
         {
+            Console.WriteLine("oi");
+
             return View();
         }
+        [HttpPost]
+        public IActionResult Create([FromForm] PeopleModel pessoa )
+        {
+            Console.WriteLine(pessoa.DateOfBirth);
+            return View("Index");
+        }
+
+
+
+
+
+
 
         public IActionResult Privacy()
         {
@@ -33,3 +49,8 @@ namespace TrabalhoAed.Controllers
         }
     }
 }
+
+
+
+
+

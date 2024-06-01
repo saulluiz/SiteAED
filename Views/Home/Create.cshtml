@@ -4,13 +4,14 @@
 
         <h1>Create</h1>
 
-        <form>
+        <form asp-action="Create">
 
             <div>
                 <div>
+                   
 
-                    <label for="userId">UserId: </label>
-                    <input name="userId" type="text" />
+                    <label for="UserId">UserId: </label>
+                    <input name="UserId" type="text" />
 
                 </div>
                 <div>
@@ -33,28 +34,28 @@
             <div>
                 <div>
                     <label for="Email">Email: </label>
-                    <input name="Email" type="email" />
+                    <input name="Email" type="text" />
                 </div>
                 <div>
 
                     <label for="Phone">Phone: </label>
-                    <input name="userId" type="text" />
+                    <input name="Phone" type="text" />
                 </div>
             </div>
 
 
+            <div>
                 <div>
-                    <div>
 
-                <label for="DateOfBirth">Date of birth: </label>
-                <input name="DateOfBirth" type="date" />
-                    </div>
+                     <label for="DateOfBirth">Date of birth: </label>
+                    <input name="DateOfBirth" type="date" /> 
+                </div>
                 <div id="BotaoEnvio">
 
-                    <input  type="submit" />
-                    </div>
+                    <input type="submit" />
                 </div>
-           
+            </div>
+
         </form>
 
 
