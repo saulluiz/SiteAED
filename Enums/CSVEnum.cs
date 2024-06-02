@@ -1,24 +1,24 @@
 public static class PeopleFiles
 {
-    public const string p1 = "people-100.csv";
-    public const string p2 = "people-1000.csv";
-    public const string p3 = "people-10000.csv";
-    public const string p4 = "people-100000.csv";
+    public const string PEOPLE_100 = "people-100.csv";
+    public const string PEOPLE_1000 = "people-1000.csv";
+    public const string PEOPLE_10000 = "people-10000.csv";
+    public const string PEOPLE_1000000 = "people-1000000.csv";
 
     public static string GetFile(int id)
     {
         switch (id)
         {
             case 1:
-                return p1;
+                return PEOPLE_100;
             case 2:
-                return p2;
+                return PEOPLE_1000;
             case 3:
-                return p3;
+                return PEOPLE_10000;
             case 4:
-                return p4;
+                return PEOPLE_1000000;
             default:
-                return p1;
+                return PEOPLE_100;
         }
     }
 }
