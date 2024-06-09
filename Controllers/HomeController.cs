@@ -1,13 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
+using System.Security.Cryptography.Xml;
 using TrabalhoAed.Models;
 
 namespace TrabalhoAed.Controllers
 {
+
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+       
+
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -29,7 +34,7 @@ namespace TrabalhoAed.Controllers
         [HttpGet]
         public IActionResult Creating(int id)
         {
-            return View();
+            return View(SexModel.sexTypes());
         }
         
         [HttpPost]
