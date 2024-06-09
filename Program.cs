@@ -16,8 +16,6 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.UseMiddleware<LoadListMiddleWare>();
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}"

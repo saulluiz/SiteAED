@@ -30,13 +30,11 @@ namespace TrabalhoAed.Controllers
             return View();
         } 
         [HttpGet]
-        public IActionResult Read()
+        public IActionResult Read(int id)
         {
-            Lista lista = new Lista();
-            lista.Add(new PeopleModel() { UserId="1",FirstName="Leandro",LastName="Barbara",Sex="apaixonado",Email="leandrin@gmail",Phone="teleforne",JobTitle="apaixonado"});;lista.Add(new PeopleModel() { UserId="1",FirstName="Saulo",LastName="Barbara",Sex="apaixonado",Email="leandrin@gmail",Phone="teleforne",JobTitle="apaixonado"});;
-
+            FileModifier.ReadFile(PeopleFiles.GetFile(id));
             
-            return View(lista);
+            return View(DB.LIST);
         } 
         
         
