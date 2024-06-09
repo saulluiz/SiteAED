@@ -139,4 +139,14 @@ public class Lista
     {
         return Remove(0);
     }
+
+    public void Map(Action<Celula> func)
+    {
+        Celula aux = primeiro.prox;
+        while (aux != null)
+        {
+            func(aux);
+            aux = aux.prox;
+        }
+    }
 }

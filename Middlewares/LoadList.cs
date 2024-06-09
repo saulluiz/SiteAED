@@ -9,7 +9,8 @@ public class LoadListMiddleWare
 
     public async Task InvokeAsync(HttpContext httpContext)
     {
-        Console.WriteLine("Middleware");
+        FileModifier.ReadFile(PeopleFiles.GetFile(1));
+        Console.WriteLine("Lista carregada");
         
         await _next(httpContext);
     }

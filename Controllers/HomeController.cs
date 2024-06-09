@@ -35,7 +35,7 @@ namespace TrabalhoAed.Controllers
         [HttpPost]
         public IActionResult Creating(int id,[FromForm] PeopleModel pessoa )
         {
-            DB.Create( PeopleFiles.GetFile(id), pessoa );
+            FileModifier.Create( PeopleFiles.GetFile(id), pessoa );
 
             return View("Index");
         }
