@@ -13,7 +13,13 @@ public class Celula
 public class Lista
 {
     Celula primeiro, ultimo;
-    public int count;
+    private int count;
+    public int Count
+    {
+        get { return count; }
+
+
+    }
 
     public PeopleModel this[int index]
     {

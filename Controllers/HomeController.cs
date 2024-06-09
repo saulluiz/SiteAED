@@ -29,11 +29,21 @@ namespace TrabalhoAed.Controllers
         {
             return View();
         } 
+        [HttpGet]
+        public IActionResult Read()
+        {
+            Lista lista = new Lista();
+            lista.Add(new PeopleModel() { UserId="1",FirstName="Leandro",LastName="Barbara",Sex="apaixonado",Email="leandrin@gmail",Phone="teleforne",JobTitle="apaixonado"});;lista.Add(new PeopleModel() { UserId="1",FirstName="Saulo",LastName="Barbara",Sex="apaixonado",Email="leandrin@gmail",Phone="teleforne",JobTitle="apaixonado"});;
+
+            
+            return View(lista);
+        } 
         
         
         [HttpGet]
         public IActionResult Creating(int id)
         {
+            
             return View(SexModel.sexTypes());
         }
         
