@@ -18,10 +18,10 @@ namespace TrabalhoAed.Controllers
         {
             return View();
         }
+
         [HttpGet]
         public IActionResult Create()
         {
-
             return View();
         } 
         
@@ -29,11 +29,9 @@ namespace TrabalhoAed.Controllers
         [HttpGet]
         public IActionResult Creating(int id)
         {
-
             return View();
         }
         
-       
         [HttpPost]
         public IActionResult Creating(int id,[FromForm] PeopleModel pessoa )
         {
@@ -41,12 +39,6 @@ namespace TrabalhoAed.Controllers
 
             return View("Index");
         }
-
-
-
-
-
-
 
         public IActionResult Privacy()
         {
