@@ -4,11 +4,11 @@
 
         <h1>Create</h1>
 
-        <form asp-action="Creating" >
+        <form asp-action="Creating">
 
             <div>
                 <div>
-                   
+
 
                     <label for="UserId">UserId: </label>
                     <input name="UserId" type="text" />
@@ -43,13 +43,30 @@
                 </div>
             </div>
 
-
             <div>
-                <div>
-
+                <div
                      <label for="DateOfBirth">Date of birth: </label>
-                    <input name="DateOfBirth" type="date" /> 
+                    <input name="DateOfBirth" type="date" />
                 </div>
+                <div
+                     <label for="Sex">Sex:</label>
+                    <select id="selectForm" name="sex" type="date">
+                        @{
+                            foreach(string gender in Model)
+                            {
+                                
+                            <option value=@gender>@gender </option>
+                            }
+                        }
+                    
+                    
+                    </select>
+
+                </div>
+
+            </div>
+            <div>
+
                 <div id="BotaoEnvio">
 
                     <input type="submit" />
