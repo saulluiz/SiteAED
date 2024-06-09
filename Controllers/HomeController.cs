@@ -23,10 +23,10 @@ namespace TrabalhoAed.Controllers
         {
             return View();
         }
+
         [HttpGet]
         public IActionResult Create()
         {
-
             return View();
         } 
         
@@ -34,24 +34,16 @@ namespace TrabalhoAed.Controllers
         [HttpGet]
         public IActionResult Creating(int id)
         {
-
             return View(SexModel.sexTypes());
         }
         
-       
         [HttpPost]
         public IActionResult Creating(int id,[FromForm] PeopleModel pessoa )
         {
-            DB.Create( PeopleFiles.GetFile(id), pessoa );
+            FileModifier.Create( PeopleFiles.GetFile(id), pessoa );
 
             return View("Index");
         }
-
-
-
-
-
-
 
         public IActionResult Privacy()
         {
