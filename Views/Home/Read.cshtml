@@ -16,11 +16,13 @@
 
             <tr>
                 @{
+                    Model.InserirInicio(new PeopleModel() { UserId = "300" });
+                    Model.InserirInicio(new PeopleModel() { UserId = "400" });
                     while (Model.Count != 0)
 
                     {
 
-                        var person = Model.removeFim();
+                        var person = Model.removeinicio();
                     <tr>
                         <td class="td">1</td>
                         <td class="td">@person.UserId</td>
