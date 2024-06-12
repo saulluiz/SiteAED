@@ -1,6 +1,5 @@
-using Microsoft.VisualBasic;
 
-public class PeopleModel()
+public class PeopleModel
 {
     public string UserId { get; set; }
     public string FirstName { get; set; }
