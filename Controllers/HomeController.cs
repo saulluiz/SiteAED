@@ -11,7 +11,7 @@ namespace TrabalhoAed.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-       
+
 
 
         public HomeController(ILogger<HomeController> logger)
@@ -28,34 +28,33 @@ namespace TrabalhoAed.Controllers
         public IActionResult Create()
         {
             return View();
-        } 
+        }
         [HttpGet]
         public IActionResult Read(int id)
         {
             FileModifier.ReadFile(PeopleFiles.GetFile(id));
-            
-            return View(new{ page=id,LIST=DB.LIST});
-        }   
-        [HttpGet]
-        public IActionResult Delete(int page,int id)
-        {
 
-            Console.WriteLine("User excluido: "+ id);
+            return View(new { page = id, LIST = DB.LIST });
+        }
+        [HttpGet]
+        public IActionResult Delete(int page, int id)
+        {
+            Console.WriteLine("User excluido: " + id);
             return RedirectToAction($"Read({page})");
-        } 
-        
-        
+        }
+
+
         [HttpGet]
         public IActionResult Creating(int id)
         {
-            
+
             return View(SexModel.sexTypes());
         }
-        
+
         [HttpPost]
-        public IActionResult Creating(int id,[FromForm] PeopleModel pessoa )
+        public IActionResult Creating(int id, [FromForm] PeopleModel pessoa)
         {
-            FileModifier.Create( PeopleFiles.GetFile(id), pessoa );
+            DB.Create(pessoa, id);
 
             return View("Index");
         }
