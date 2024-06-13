@@ -113,7 +113,7 @@ public class Lista
 
     public PeopleModel Remove(int pos)
     {
-        if (pos < 0 || pos > count - 1)
+        if (pos < 0 || pos >= count - 1)
         {
             throw new Exception("Posicao nao existe");
         }

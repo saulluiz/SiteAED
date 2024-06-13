@@ -16,14 +16,14 @@
 
             <tr>
                 @{
-                    Model.InserirInicio(new PeopleModel() { UserId = "300" });
-                    Model.InserirInicio(new PeopleModel() { UserId = "400" });
-                    while (Model.Count != 0)
+                    int i = 0;
+                    while (DB.LIST.Count != i)
 
                     {
 
-                        var person = Model.removeinicio();
-                    <tr>
+                        var person = DB.LIST[i]; //indexamos nossa lista, logo, isso  é possivel 
+                        i++;
+                        <tr>
                         <td class="td">1</td>
                         <td class="td">@person.UserId</td>
                         <td class="td">@person.FirstName</td>
@@ -34,10 +34,11 @@
                         <td class="td">09/06/1954</td>
                         <td class="td">@person.JobTitle</td>
                         <td>
-                            <button type="button" id="edit">Edit</button><button type="button" id="delete">
-                                Delete
-                            </button>
+                            <button type="button" id="edit" >Edit</button>
+                            <a type="button" id="delete" asp-controller="Home" asp-action="Delete" asp-route-id="@Model/@person.UserId"> Delete </a>
+
                         </td>
+                        
 
                     </tr>
                     }

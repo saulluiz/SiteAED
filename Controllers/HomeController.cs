@@ -34,7 +34,14 @@ namespace TrabalhoAed.Controllers
         {
             FileModifier.ReadFile(PeopleFiles.GetFile(id));
             
-            return View(DB.LIST);
+            return View(id);
+        }   
+        [HttpGet]
+        public IActionResult Delete(int page,int id)
+        {
+
+            Console.WriteLine("User excluido: "+ id);
+            return RedirectToAction($"Read({page})");
         } 
         
         
