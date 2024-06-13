@@ -110,6 +110,7 @@ public class Lista
             aux = aux.prox;
         }
     }
+   
 
     public PeopleModel Remove(int pos)
     {

@@ -34,7 +34,7 @@ namespace TrabalhoAed.Controllers
         {
             FileModifier.ReadFile(PeopleFiles.GetFile(id));
             
-            return View(id);
+            return View(new{ page=id,LIST=DB.LIST});
         }   
         [HttpGet]
         public IActionResult Delete(int page,int id)

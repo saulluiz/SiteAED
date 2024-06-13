@@ -33,6 +33,7 @@ static class FileModifier
     public static void ReadFile(string file)
     {
         string pathToFile = PATH_TO_FILES + file;
+        DB.LIST = new Lista();
 
         using (StreamReader sw = new StreamReader(pathToFile))
         {
@@ -42,6 +43,7 @@ static class FileModifier
                 DB.LIST.Add(LineToPeople(line));
             }
         }
+        Console.WriteLine("lista carregada count:"+DB.LIST.Count);
     }
 
     public static PeopleModel LineToPeople(string line)
