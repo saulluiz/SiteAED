@@ -39,7 +39,7 @@ static class FileModifier
             string line = sw.ReadLine();
             while ((line = sw.ReadLine()) != null)
             {
-                DB.LIST.InserirInicio(LineToPeople(line));
+                DB.LIST.Add(LineToPeople(line));
             }
         }
     }

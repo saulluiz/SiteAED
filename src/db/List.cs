@@ -52,7 +52,9 @@ public class Lista
             primeiro.prox = new Celula(value);
             primeiro.prox.prox = aux;
         }
+        
         count++;
+        
     }
 
     public void inserirVazio(PeopleModel? value = null)
