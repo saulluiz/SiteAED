@@ -52,9 +52,9 @@ public class Lista
             primeiro.prox = new Celula(value);
             primeiro.prox.prox = aux;
         }
-        
+
         count++;
-        
+
     }
 
     public void inserirVazio(PeopleModel? value = null)
@@ -110,7 +110,7 @@ public class Lista
             aux = aux.prox;
         }
     }
-   
+
 
     public PeopleModel Remove(int pos)
     {
@@ -157,5 +157,16 @@ public class Lista
             func(aux);
             aux = aux.prox;
         }
+    }
+    public PeopleModel search(string userId)
+    {
+        PeopleModel p = new PeopleModel();
+        Map((people) =>
+        {
+            if (people.value.UserId == userId)
+                p = people.value;
+
+                });
+        return p;
     }
 }
