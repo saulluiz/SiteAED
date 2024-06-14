@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
+using System.Linq.Expressions;
 using System.Security.Cryptography.Xml;
 using TrabalhoAed.Models;
 
@@ -46,7 +47,7 @@ namespace TrabalhoAed.Controllers
             //delete a pessoa de id == peopleTODelete
             return RedirectToAction("Read", new { id = page });
         }
-       
+
         [HttpGet]
         public IActionResult UpdatePage(string id)
         {
@@ -54,7 +55,7 @@ namespace TrabalhoAed.Controllers
             string page = arr[0];
             string peopleToUpdate = arr[1];
             Console.WriteLine("Update " + peopleToUpdate);
-            return View(new { page = page,people=peopleToUpdate }); ;
+            return View(new { page = page, people = peopleToUpdate }); ;
         }
 
 
@@ -80,6 +81,31 @@ namespace TrabalhoAed.Controllers
         {
 
             return View(SexModel.sexTypes());
+        }
+        [HttpGet]
+        public IActionResult Ordenar(string id)
+        {
+            Lista list = DB.LIST;
+            var arr = id.Split("?");
+            string page = arr[0];
+            string parametroOrdenacao = arr[1];
+
+            switch (parametroOrdenacao)
+            {
+                case "FirstName":
+                    // List= lista ordenada
+                    break;
+                case "LastName":
+                    // code block
+                    break;
+                case "Sex":
+
+                    break;
+                case "Job Title":
+                    //code Block
+                    break;
+            }
+            return View(new { page = id, LIST = list });
         }
 
         [HttpPost]
