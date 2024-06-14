@@ -35,7 +35,7 @@
                         <td class="td">@person.JobTitle</td>
                         <td>
                             <button type="button" id="edit" >Edit</button>
-                            <a type="button" id="delete" asp-controller="Home" asp-action="Delete" asp-route-id="@Model.page/@person.UserId"> Delete </a>
+                            <a type="button" id="delete" asp-controller="Home" asp-action="Delete" asp-route-id="@Model.page?@person.UserId"> Delete </a>
 
                         </td>
                         

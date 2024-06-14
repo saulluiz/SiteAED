@@ -37,11 +37,13 @@ namespace TrabalhoAed.Controllers
             return View(new{ page=id,LIST=DB.LIST});
         }   
         [HttpGet]
-        public IActionResult Delete(int page,int id)
+        public IActionResult Delete(string id)
         {
-
-            Console.WriteLine("User excluido: "+ id);
-            return RedirectToAction($"Read({page})");
+            var arr = id.Split("?");
+            string page = arr[0];
+            string peopleToDelete = arr[1];
+            Console.WriteLine(peopleToDelete);
+            return RedirectToAction("Read",new {id=page});
         } 
         
         
