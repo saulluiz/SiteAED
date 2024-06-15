@@ -107,6 +107,7 @@ static class FileModifier
         {
             sw.WriteLine(PeopleToLine(peoples[i]));
         }
+        
     }
 
     public static void RemoveSpecificLine(string filePath, Func<string, bool> lineCondition)
