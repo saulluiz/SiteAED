@@ -29,6 +29,9 @@ public static class DB
 
     public static bool Update(PeopleModel pessoa, int file)
     {
+        if(LIST.Count == 0)
+            FileModifier.ReadFile(PeopleFiles.GetFile(file));
+
         if (LIST.Update(pessoa))
         {
             FileModifier.ReWriteFile(PeopleFiles.GetFile(file), LIST.ToArray());
