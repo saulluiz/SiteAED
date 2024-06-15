@@ -91,10 +91,10 @@ static class FileModifier
         };
     }
 
-    public static void DeleteLine(string file, PeopleModel people)
+    public static void DeleteLine(string file, string userID)
     {
         string pathToFile = PATH_TO_FILES + file;
-        RemoveSpecificLine(pathToFile, (l) => l.StartsWith(people.Index + ","));
+        RemoveSpecificLine(pathToFile, (l) => l.Contains(userID + ","));
     }
 
     public static void ReWriteFile(string file, PeopleModel[] peoples)
