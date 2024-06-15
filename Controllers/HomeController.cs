@@ -37,6 +37,7 @@ namespace TrabalhoAed.Controllers
 
             return View(new { page = id, LIST = DB.LIST });
         }
+
         [HttpGet]
         public IActionResult Delete(string id)
         {
@@ -76,12 +77,14 @@ namespace TrabalhoAed.Controllers
             return View();
         }
 
+
         [HttpGet]
         public IActionResult Creating(int id)
         {
 
             return View(SexModel.sexTypes());
         }
+
         [HttpGet]
         public IActionResult Ordenar(string id)
         {
@@ -111,7 +114,7 @@ namespace TrabalhoAed.Controllers
         [HttpPost]
         public IActionResult Creating(int id, [FromForm] PeopleModel pessoa)
         {
-            FileModifier.Create(PeopleFiles.GetFile(id), pessoa);
+            DB.Create(pessoa, id);
 
             return View("Index");
         }

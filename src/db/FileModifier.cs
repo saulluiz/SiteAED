@@ -18,14 +18,15 @@ static class FileModifier
     {
         var line = new StringBuilder();
 
+        line.Append($"{pessoa.Index},");
         line.Append($"{pessoa.UserId},");
         line.Append($"{pessoa.FirstName},");
         line.Append($"{pessoa.LastName},");
         line.Append($"{pessoa.Sex},");
         line.Append($"{pessoa.Email},");
         line.Append($"{pessoa.Phone},");
-        line.Append($"{pessoa.DateOfBirth}");
-        line.Append($"{pessoa.JobTitle},");
+        line.Append($"{pessoa.DateOfBirth.ToShortDateString()},");
+        line.Append($"{pessoa.JobTitle}");
 
         return line.ToString();
     }
@@ -43,7 +44,7 @@ static class FileModifier
                 DB.LIST.Add(LineToPeople(line));
             }
         }
-        Console.WriteLine("lista carregada count:"+DB.LIST.Count);
+        Console.WriteLine("lista carregada count:" + DB.LIST.Count);
     }
 
     public static PeopleModel LineToPeople(string line)
@@ -65,7 +66,7 @@ static class FileModifier
             for (int i = 8; i < peopleData.Length - 1; i++)
             {
                 aux.Append(peopleData[i]);
-                aux.Append(",");
+                aux.Append(',');
 
             }
             aux.Append(peopleData[peopleData.Length - 1]);
@@ -76,7 +77,8 @@ static class FileModifier
             jobTitle = peopleData[8];
         }
 
-        return new PeopleModel {
+        return new PeopleModel
+        {
             UserId = userId,
             FirstName = firtName,
             LastName = lastName,
@@ -86,5 +88,35 @@ static class FileModifier
             DateOfBirth = DateTime.Parse(dateOfBirth),
             JobTitle = jobTitle
         };
+    }
+
+    public static void DeleteLine(string file, PeopleModel people)
+    {
+        string pathToFile = PATH_TO_FILES + file;
+        RemoveSpecificLine(pathToFile, (l) => l.StartsWith(people.Index + ","));
+    }
+
+    public static void ReWriteFile(string file, PeopleModel[] peoples)
+    {
+        string pathToFile = PATH_TO_FILES + file;
+        File.Delete(pathToFile);
+
+        using StreamWriter sw = new StreamWriter(pathToFile);
+        for (int i = 0; i < peoples.Length; i++)
+        {
+            sw.WriteLine(PeopleToLine(peoples[i]));
+        }
+    }
+
+    public static void RemoveSpecificLine(string filePath, Func<string, bool> lineCondition)
+    {
+        // Read all lines from the file
+        var lines = File.ReadAllLines(filePath).ToList();
+
+        // Remove the line that matches the condition
+        lines.RemoveAll(line => lineCondition(line));
+
+        // Write the remaining lines back to the file
+        File.WriteAllLines(filePath, lines);
     }
 }
