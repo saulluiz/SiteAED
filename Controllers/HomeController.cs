@@ -45,7 +45,7 @@ namespace TrabalhoAed.Controllers
             var arr = id.Split("?");
             string page = arr[0];
             string peopleToDelete = arr[1];
-            Console.WriteLine(peopleToDelete);
+            DB.Delete(peopleToDelete, page);
             //delete a pessoa de id == peopleTODelete
             return RedirectToAction("Read", new { id = page });
         }
@@ -56,7 +56,7 @@ namespace TrabalhoAed.Controllers
             var arr = id.Split("?");
             string page = arr[0];
             string peopleToUpdate = arr[1];
-            Console.WriteLine("Update " + peopleToUpdate);
+            
             return View(new { page = page, people = peopleToUpdate }); ;
         }
 
@@ -68,8 +68,8 @@ namespace TrabalhoAed.Controllers
             string page = arr[0];
             string peopleToUpdate = arr[1];
             Console.WriteLine("Editando pessoa " + pessoa.FirstName + " " + peopleToUpdate);
-            //Passa os dados do PeopleModel pessoa para a funcao de update
-
+     
+            DB.Update(pessoa, int.Parse(page));
             return RedirectToAction("Read", new { id = page });
         }
         [HttpGet]
