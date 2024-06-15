@@ -1,6 +1,6 @@
-﻿namespace TrabalhoAed.Models
+﻿namespace site_aed.Enums
 {
-    public static class SexModel
+    public static class Sex
     {
         public static string[] sexTypes()
         {

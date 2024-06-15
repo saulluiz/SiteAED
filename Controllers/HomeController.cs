@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using site_aed.Enums;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Linq.Expressions;
@@ -82,7 +83,7 @@ namespace TrabalhoAed.Controllers
         public IActionResult Creating(int id)
         {
 
-            return View(SexModel.sexTypes());
+            return View(Sex.sexTypes());
         }
 
         [HttpGet]
