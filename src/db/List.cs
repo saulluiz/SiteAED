@@ -198,7 +198,7 @@ public class Lista
 
         while (first != null)
         {
-            if (first.value.Index == people.Index)
+            if (first.value.UserId == people.UserId)
             {
                 first.value = people;
                 return true;

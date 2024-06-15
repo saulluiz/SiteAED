@@ -34,6 +34,7 @@ public static class DB
 
         if (LIST.Update(pessoa))
         {
+            Console.WriteLine("To conseguindo fazer");
             FileModifier.ReWriteFile(PeopleFiles.GetFile(file), LIST.ToArray());
             return true;
         }
