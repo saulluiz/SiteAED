@@ -44,7 +44,7 @@ static class FileModifier
                 DB.LIST.Add(LineToPeople(line));
             }
         }
-        Console.WriteLine("lista carregada count:" + DB.LIST.Count);
+        Console.WriteLine("lista carregada, tamanho:" + DB.LIST.Count);
     }
 
     public static PeopleModel LineToPeople(string line)
@@ -79,6 +79,7 @@ static class FileModifier
 
         return new PeopleModel
         {
+            Index = index,
             UserId = userId,
             FirstName = firtName,
             LastName = lastName,
@@ -90,10 +91,10 @@ static class FileModifier
         };
     }
 
-    public static void DeleteLine(string file, PeopleModel people)
+    public static void DeleteLine(string file, string userID)
     {
         string pathToFile = PATH_TO_FILES + file;
-        RemoveSpecificLine(pathToFile, (l) => l.StartsWith(people.Index + ","));
+        RemoveSpecificLine(pathToFile, (l) => l.Contains(userID + ","));
     }
 
     public static void ReWriteFile(string file, PeopleModel[] peoples)

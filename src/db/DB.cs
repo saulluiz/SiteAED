@@ -11,18 +11,27 @@ public static class DB
         FileModifier.Create(PeopleFiles.GetFile(file), pessoa);
     }
 
-    public static bool Delete(PeopleModel pessoa, int file)
+    public static bool Delete(string userID, int file)
     {
-        if (LIST.Remove(pessoa))
+        if(LIST.Count == 0)
+            FileModifier.ReadFile(PeopleFiles.GetFile(file));
+
+        if (LIST.Remove(userID))
         {
-            FileModifier.DeleteLine(PeopleFiles.GetFile(file), pessoa);
+            Console.WriteLine("Deletado");
+            FileModifier.DeleteLine(PeopleFiles.GetFile(file), userID);
             return true;
         }
+        
+        Console.WriteLine("Não deletado");
         return false;
     }
 
     public static bool Update(PeopleModel pessoa, int file)
     {
+        if(LIST.Count == 0)
+            FileModifier.ReadFile(PeopleFiles.GetFile(file));
+
         if (LIST.Update(pessoa))
         {
             FileModifier.ReWriteFile(PeopleFiles.GetFile(file), LIST.ToArray());

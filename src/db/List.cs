@@ -94,7 +94,7 @@ public class Lista
 
     public PeopleModel Remove(int pos)
     {
-        if (pos < 0 || pos >= _count - 1)
+        if (pos < 0 || pos > _count - 1)
         {
             throw new Exception("Posicao nao existe");
         }
@@ -119,16 +119,23 @@ public class Lista
         return aux.value;
     }
 
-    public bool Remove(PeopleModel people)
+    public bool Remove(string userID)
     {
         int pos = 0;
         Celula first = primeiro.prox;
 
         while (first != null)
         {
-            if (first.value.Index == people.Index)
+            if (first.value.UserId == userID)
             {
-                Remove(pos);
+                Console.WriteLine("Posição a ser deletada: " + pos);
+
+                if(pos <= _count)
+                    Remove(pos);
+                else
+                    break;
+                
+                Console.WriteLine($"Removido: {first.value.UserId}, {first.value.FirstName}");
                 _count--;
                 return true;
             }
