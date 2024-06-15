@@ -1,9 +1,18 @@
-﻿<div>
+﻿
+
+<div id="PaginaLeitura">
+    <div id="Ordenadores">
+        <h2>Ordenar por:</h2>
+        <a type="button" id="sort" asp-controller="Home" asp-action="Ordenar" asp-route-id="@Model.page?FirstName">FirstName <i class="bi bi-list-ul"></i></a>
+    <a type="button" id="sort" asp-controller="Home" asp-action="Ordenar" asp-route-id="@Model.page?LastName">LastName</a>
+        <a type="button" id="sort" asp-controller="Home" asp-action="Ordenar" asp-route-id="@Model.page?JobTitle">JobTitle</a>
+    </div>
+
     <table class="table">
         <thead>
         <th class="th">Index</th>
         <th class="th">User Id</th>
-        <th class="th">Firts Name</th>
+        <th class="th">Firts Name </th>
         <th class="th">Last Name</th>
         <th class="th">Sex</th>
         <th class="th">Email</th>
@@ -21,9 +30,9 @@
 
                     {
 
-                        var person = Model.LIST[i]; //indexamos nossa lista, logo, isso  é possivel 
+                        var person = Model.LIST[i]; //indexamos nossa lista, logo, isso  é possivel
                         i++;
-                        <tr>
+                    <tr>
                         <td class="td">@i</td>
                         <td class="td">@person.UserId</td>
                         <td class="td">@person.FirstName</td>
@@ -34,11 +43,11 @@
                         <td class="td">09/06/1954</td>
                         <td class="td">@person.JobTitle</td>
                         <td>
-                            <button type="button" id="edit" >Edit</button>
-                            <a type="button" id="delete" asp-controller="Home" asp-action="Delete" asp-route-id="@Model.page/@person.UserId"> Delete </a>
+                            <a type="button" id="edit" asp-controller="Home" asp-action="UpdatePage" asp-route-id="@Model.page?@person.UserId">Edit</a>
+                            <a type="button" id="delete" asp-controller="Home" asp-action="Delete" asp-route-id="@Model.page?@person.UserId"> Delete </a>
 
                         </td>
-                        
+
 
                     </tr>
                     }

@@ -202,4 +202,16 @@ public class Lista
 
         return false;
     }
+  
+    public PeopleModel search(string userId)
+    {
+        PeopleModel p = new PeopleModel();
+        Map((people) =>
+        {
+            if (people.value.UserId == userId)
+                p = people.value;
+
+        });
+        return p;
+    }
 }

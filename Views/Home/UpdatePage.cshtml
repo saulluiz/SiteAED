@@ -1,0 +1,92 @@
+﻿
+<div id="CreatePage">
+    <div class="PrincipalBox">
+
+        <h1>Update</h1>
+
+        <form asp-action="UpdatePage">
+            @{
+                var person = DB.LIST.search(Model.people);
+            }
+            <div>
+                <div>
+
+
+                    <label for="UserId">UserId: </label>
+                    <input name="UserId" type="text" value=@person.UserId />
+
+                </div>
+                <div>
+                    <label for="JobTitle">Job Title: </label>
+                    <input name="JobTitle" type="text" value=@person.JobTitle />
+                </div>
+            </div>
+            <div>
+                <div>
+
+                    <label for="FirstName">First Name: </label>
+                    <input name="FirstName" type="text" value=@person.FirstName />
+                </div>
+                <div>
+
+                    <label for="LastName">Last Name: </label>
+                    <input name="LastName" type="text" value=@person.LastName />
+                </div>
+            </div>
+            <div>
+                <div>
+                    <label for="Email">Email: </label>
+                    <input name="Email" type="text" value=@person.Email />
+                </div>
+                <div>
+
+                    <label for="Phone">Phone: </label>
+                    <input name="Phone" type="text" value=@person.Phone />
+                </div>
+            </div>
+
+            <div>
+                <div
+                    <label for="DateOfBirth">Date of birth: </label>
+                    <input name="DateOfBirth" type="date"  value=@person.DateOfBirth/>
+                </div>
+                <div
+                    <label for="Sex">Sex:</label>
+                    <select id="selectForm" name="sex"  >
+                        @{
+                            var genders = SexModel.sexTypes();
+                            foreach(string gender in genders)
+                            {
+                                if (gender != person.Sex)
+                                {
+                                    <option value=@gender>
+                                        @gender
+                                    </option>
+                                }
+
+                                else{
+                                    
+                                <option value=@gender selected="selected">@gender </option>
+                                }
+                            }
+                        }
+                    
+                    
+                    </select>
+
+                </div>
+
+            </div>
+            <div>
+
+                <div id="BotaoEnvio">
+
+                    <input type="submit" />
+                </div>
+            </div>
+
+        </form>
+
+
+    </div>
+</div>
