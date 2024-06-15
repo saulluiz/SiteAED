@@ -57,8 +57,17 @@
                             var genders = SexModel.sexTypes();
                             foreach(string gender in genders)
                             {
-                                
-                            <option value=@gender>@gender </option>
+                                if (gender != person.Sex)
+                                {
+                                    <option value=@gender>
+                                        @gender
+                                    </option>
+                                }
+
+                                else{
+                                    
+                                <option value=@gender selected="selected">@gender </option>
+                                }
                             }
                         }
                     
