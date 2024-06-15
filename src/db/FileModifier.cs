@@ -44,7 +44,7 @@ static class FileModifier
                 DB.LIST.Add(LineToPeople(line));
             }
         }
-        Console.WriteLine("lista carregada count:" + DB.LIST.Count);
+        Console.WriteLine("lista carregada, tamanho:" + DB.LIST.Count);
     }
 
     public static PeopleModel LineToPeople(string line)
@@ -79,6 +79,7 @@ static class FileModifier
 
         return new PeopleModel
         {
+            Index = index,
             UserId = userId,
             FirstName = firtName,
             LastName = lastName,
