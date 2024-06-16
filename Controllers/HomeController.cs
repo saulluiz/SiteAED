@@ -46,7 +46,7 @@ namespace TrabalhoAed.Controllers
             Lista l1=new Lista();
             l1.Add(DB.LIST.search(query.value));
             Console.WriteLine(query.valueType);
-            //enviar uma lista a pagina utilizando o metodo de pesquisa otimizado (Serach ainda é sequencial)
+            //enviar uma lista a pagina utilizando o metodo de pesquisa otimizado (Serach ainda ï¿½ sequencial)
             //sugestao: Criar metodo que receba os parametros do tipo da pesquisa e do valor da pesquisa e ,a partir disso
             //retorne uma lista [Essa lista deve ser passada para View abaixo, com os parametros dentro do objeto
 
