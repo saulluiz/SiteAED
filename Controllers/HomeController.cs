@@ -60,7 +60,7 @@ namespace TrabalhoAed.Controllers
         {
             var arr = id.Split("?");
             string page = arr[0];
-            string peopleToDelete = arr[1];
+            string peopleToDelete = arr[arr.Length-1];
             DB.Delete(peopleToDelete, int.Parse(page));
             //delete a pessoa de id == peopleTODelete
             return RedirectToAction("Read", new { id = page });
