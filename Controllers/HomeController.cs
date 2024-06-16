@@ -35,7 +35,7 @@ namespace TrabalhoAed.Controllers
         public IActionResult Read(int id)
         {
             FileModifier.ReadFile(PeopleFiles.GetFile(id));
-            
+
             return View(new { page = id, LIST = DB.LIST });
         }
 
@@ -90,27 +90,27 @@ namespace TrabalhoAed.Controllers
         [HttpGet]
         public IActionResult Ordenar(string id)
         {
-            Lista list = DB.LIST;
             var arr = id.Split("?");
             string page = arr[0];
             string parametroOrdenacao = arr[1];
+         
+            FileModifier.ReadFile(PeopleFiles.GetFile(int.Parse(page)));
 
             switch (parametroOrdenacao)
             {
                 case "FirstName":
-                    // List= lista ordenada
+                    DB.LIST.Sort((p) => p.FirstName);
                     break;
                 case "LastName":
-                    // code block
-                    break;
-                case "Sex":
-
+                    DB.LIST.Sort((p) => p.LastName);
                     break;
                 case "Job Title":
                     //code Block
                     break;
             }
-            return View(new { page = id, LIST = list });
+
+            DB.LIST.Imprimir();
+            return View("read", new { page = id, LIST = DB.LIST });
         }
 
         [HttpPost]

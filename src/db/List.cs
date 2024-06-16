@@ -1,4 +1,5 @@
 
+using System.Globalization;
 public class Celula
 {
     public Celula prox;
@@ -168,6 +169,9 @@ public class Lista
 
     public PeopleModel[] ToArray()
     {
+        if(_count == 0)
+            return null;
+
         PeopleModel[] peoples = new PeopleModel[_count];
 
         Celula aux = primeiro.prox;
@@ -179,16 +183,13 @@ public class Lista
         return peoples;
     }
 
-    public static Lista ToList(PeopleModel[] peoples)
+    public void ToList(PeopleModel[] peoples)
     {
-        Lista list = new Lista();
-
-        foreach (var people in peoples)
+        Celula aux = primeiro.prox;
+        for (int i = 0; i < _count; i++, aux = aux.prox)
         {
-            list.Add(people);
+            aux.value = peoples[i];
         }
-
-        return list;
     }
 
     public bool Update(PeopleModel people)
@@ -224,5 +225,47 @@ public class Lista
 
         });
         return p;
+    }
+
+     public void Sort(Func<PeopleModel, string> condition)
+    {
+        var  peopleList = ToArray();
+        QuickSort(peopleList, 0, peopleList.Length - 1, condition);
+        ToList(peopleList);
+    }
+
+    private void QuickSort(PeopleModel[] list, int left, int right, Func<PeopleModel, string> condition)
+    {
+        if (left < right)
+        {
+            int pivotIndex = Partition(list, left, right, condition);
+            QuickSort(list, left, pivotIndex - 1, condition);
+            QuickSort(list, pivotIndex + 1, right, condition);
+        }
+    }
+
+    private int Partition(PeopleModel[] list, int left, int right, Func<PeopleModel, string> condition)
+    {
+        PeopleModel pivotValue = list[right];
+        int i = left - 1;
+
+        for (int j = left; j < right; j++)
+        {
+            if (condition(list[j]).CompareTo(condition(pivotValue))  <= 0)
+            {
+                i++;
+                Swap(list, i, j);
+            }
+        }
+
+        Swap(list, i + 1, right);
+        return i + 1;
+    }
+
+    private void Swap(PeopleModel[] list, int i, int j)
+    {
+        PeopleModel temp = list[i];
+        list[i] = list[j];
+        list[j] = temp;
     }
 }
