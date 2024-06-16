@@ -33,6 +33,7 @@ static class FileModifier
 
     public static void ReadFile(string file)
     {
+        DB.CurrentFile = file;
         string pathToFile = PATH_TO_FILES + file;
         DB.LIST = new Lista();
 

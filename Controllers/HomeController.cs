@@ -109,8 +109,9 @@ namespace TrabalhoAed.Controllers
             var arr = id.Split("?");
             string page = arr[0];
             string parametroOrdenacao = arr[arr.Length-1];
-         
-            FileModifier.ReadFile(PeopleFiles.GetFile(int.Parse(page)));
+            if (DB.CurrentFile != PeopleFiles.GetFile(int.Parse(page))) 
+                FileModifier.ReadFile(PeopleFiles.GetFile(int.Parse(page)));
+            
 
             switch (parametroOrdenacao)
             {
@@ -123,7 +124,7 @@ namespace TrabalhoAed.Controllers
                 
             }
 
-            DB.LIST.Imprimir();
+            
             return View("Read", new { page = id, LIST = DB.LIST });
         }
 
