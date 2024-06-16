@@ -69,7 +69,7 @@ body {
         .PrincipalBox div div {
             padding: 30px;
             width: 500px;
-            max-height:100px;
+            max-height: 100px;
             display: flex;
             justify-content: space-between;
             background-color: var(--cor2);
@@ -102,32 +102,35 @@ body {
 }
 
 #BotaoEnvio {
-   box-shadow:none;
-   background-color:var(--cor1);
-   display:flex;
-   justify-content:center;
-   
+    box-shadow: none;
+    background-color: var(--cor1);
+    display: flex;
+    justify-content: center;
 }
+
     #BotaoEnvio input {
         background-color: white;
         font-family: fantasy;
         box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
         height: 70px;
-        margin-top:-15px;
+        margin-top: -15px;
     }
-    #BotaoEnvio input:hover {
-        background-color: var(--cor2);
 
-    }
-    .createPage{
-        
-    }
-    .createPage button{
+        #BotaoEnvio input:hover {
+            background-color: var(--cor2);
+        }
+
+.createPage {
+}
+
+    .createPage button {
         background-color
     }
-    #selectForm{
-        width:300px;
-    }
+
+#selectForm {
+    width: 300px;
+}
+
 .table {
     border: 1px solid #444;
     border-collapse: collapse;
@@ -257,6 +260,7 @@ body {
     background-color: #298e46;
     box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
 }
+
 .createPage {
     display: flex;
     flex-direction: column;
@@ -268,55 +272,57 @@ body {
     width: 700px;
     margin: auto;
     padding: 20px;
-    text-justify:center;
+    text-justify: center;
 }
+
     .createPage button {
         width: 300px;
         padding: 15px;
         border-radius: 10px;
         font-family: fantasy;
-        font-size:19px;
-        background-color:var(--cor2)
+        font-size: 19px;
+        background-color: var(--cor2)
     }
-    #Ordenadores h2{
-        font-size:25px;
-        justify-items:center;
- 
 
-
-    }
-#Ordenadores {
-   display:flex;
-   width:300px;
-   flex-direction:column;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    padding:20px;
-    margin-right:20px;
-    height:300px;
-    font-family:fantasy;
-    justify-content:space-around;
-    align-content:center;
+#Ordenadores h2 {
+    font-size: 25px;
+    justify-items: center;
 }
-    #PaginaLeitura{
-        display:flex;
-        width:100%;
-        padding:15px;
-    }
-    .pagina{
-        width:80%;
-        margin:auto;
 
-    }
-#sort {
-    
-
+.Ordenadores {
     display: flex;
+    width: 350px;
     flex-direction: column;
-    align-items: center;
-    padding: 6px 14px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 20px;
+    margin-right: 20px;
+    height: 200px;
     font-family: fantasy;
-    font-size:17px;
-    font-weight:300;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+#PaginaLeitura {
+    width: 100%;
+    padding: 15px;
+}
+
+.pagina {
+    width: 80%;
+    margin: auto;
+}
+
+#sort {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    padding: 6px 14px;
+    width: 200px;
+    font-family: fantasy;
+    font-size: 17px;
+    font-weight: 300;
     border-radius: 6px;
     border: none;
     background: var(--cor4);
@@ -325,10 +331,41 @@ body {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    text-decoration:none;
+    text-decoration: none;
+}
+
+.sort {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
 
 #sort:focus {
     box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
     outline: 0;
+}
+
+.pesquisa {
+    display: flex;
+    width: 350px;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 20px;
+    margin-right: 20px;
+    height: 200px;
+    font-family: fantasy;
+    justify-content: space-around;
+    align-content: center;
+}
+
+#conf {
+    margin-top: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }

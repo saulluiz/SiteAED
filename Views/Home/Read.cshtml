@@ -1,12 +1,15 @@
 ﻿
 
 <div id="PaginaLeitura">
+    <div class="container">
     <div id="Ordenadores">
         <h2>Ordenar por:</h2>
         <a type="button" id="sort" asp-controller="Home" asp-action="Ordenar" asp-route-id="@Model.page?FirstName">FirstName <i class="bi bi-list-ul"></i></a>
     <a type="button" id="sort" asp-controller="Home" asp-action="Ordenar" asp-route-id="@Model.page?LastName">LastName</a>
        
     </div>
+    <div class="pesquisa">
+
     <form asp-action="Read" asp-route-id=@Model.page>
         <label for="value">Pesquisa </label>
         <input name="value" type="text" />
@@ -21,6 +24,8 @@
         </select>
 
     </form>
+    </div>
+    </div>
 
     <table class="table">
         <thead>
