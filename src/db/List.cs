@@ -15,7 +15,7 @@ public class Lista
 {
     public Celula primeiro, ultimo;
     private int _index;
-    public int Index { get {return _index;} }
+    public int Index { get { return _index; } }
     private int _count;
     public int Count
     {
@@ -131,11 +131,11 @@ public class Lista
             {
                 Console.WriteLine("Posição a ser deletada: " + pos);
 
-                if(pos <= _count)
+                if (pos <= _count)
                     Remove(pos);
                 else
                     break;
-                
+
                 Console.WriteLine($"Removido: {first.value.UserId}, {first.value.FirstName}");
                 _count--;
                 return true;
@@ -169,7 +169,7 @@ public class Lista
 
     public PeopleModel[] ToArray()
     {
-        if(_count == 0)
+        if (_count == 0)
             return null;
 
         PeopleModel[] peoples = new PeopleModel[_count];
@@ -214,7 +214,7 @@ public class Lista
 
         return false;
     }
-  
+
     public PeopleModel search(string userId)
     {
         PeopleModel p = new PeopleModel();
@@ -227,9 +227,9 @@ public class Lista
         return p;
     }
 
-     public void Sort(Func<PeopleModel, string> condition)
+    public void Sort(Func<PeopleModel, string> condition)
     {
-        var  peopleList = ToArray();
+        var peopleList = ToArray();
         QuickSort(peopleList, 0, peopleList.Length - 1, condition);
         ToList(peopleList);
     }
@@ -251,7 +251,7 @@ public class Lista
 
         for (int j = left; j < right; j++)
         {
-            if (condition(list[j]).CompareTo(condition(pivotValue))  <= 0)
+            if (condition(list[j]).CompareTo(condition(pivotValue)) <= 0)
             {
                 i++;
                 Swap(list, i, j);
@@ -267,5 +267,41 @@ public class Lista
         PeopleModel temp = list[i];
         list[i] = list[j];
         list[j] = temp;
+    }
+
+    public PeopleModel Search(Func<PeopleModel, string> property, string value)
+    {
+        var list = ToArray();
+        QuickSort(list, 0, list.Length - 1, property);
+
+        return BinarySearch(list, value, property);
+    }
+
+    public PeopleModel BinarySearch(PeopleModel[] list, string searchValue, Func<PeopleModel, string> property)
+    {
+        int low = 0;
+        int high = list.Length - 1;
+
+        while (low <= high)
+        {
+            int mid = low + (high - low) / 2;
+            string midValue = property(list[mid]);
+
+            int comparison = string.Compare(midValue, searchValue, StringComparison.Ordinal);
+            if (comparison == 0)
+            {
+                return list[mid];
+            }
+            else if (comparison < 0)
+            {
+                low = mid + 1;
+            }
+            else
+            {
+                high = mid - 1;
+            }
+        }
+
+        return null; // Elemento não encontrado
     }
 }

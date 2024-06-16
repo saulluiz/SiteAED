@@ -1,3 +1,4 @@
+using System.Data.Common;
 using Microsoft.AspNetCore.Mvc;
 using site_aed.Enums;
 using site_aed.Models;
@@ -44,12 +45,22 @@ namespace TrabalhoAed.Controllers
         {
 
             Lista l1=new Lista();
-            l1.Add(DB.LIST.search(query.value));
-            Console.WriteLine(query.valueType);
             //enviar uma lista a pagina utilizando o metodo de pesquisa otimizado (Serach ainda � sequencial)
             //sugestao: Criar metodo que receba os parametros do tipo da pesquisa e do valor da pesquisa e ,a partir disso
             //retorne uma lista [Essa lista deve ser passada para View abaixo, com os parametros dentro do objeto
 
+            switch(query.valueType)
+            {
+                case "email":
+                    Console.WriteLine("Email");
+                    l1.Add(DB.LIST.Search((p) => p.Email, query.value));
+                    break;
+                case "UserId":
+                default:
+                    Console.WriteLine("user ID");
+                    l1.Add(DB.LIST.Search((p) => p.UserId, query.value));
+                    break;
+            }
 
             return View(new { page = id, LIST = l1 });
         }
@@ -76,7 +87,6 @@ namespace TrabalhoAed.Controllers
             return View(new { page = page, people = peopleToUpdate }); ;
         }
 
-
         [HttpPost]
         public IActionResult UpdatePage(string id, [FromForm] PeopleModel pessoa)
         {
@@ -88,18 +98,16 @@ namespace TrabalhoAed.Controllers
             DB.Update(pessoa, int.Parse(page));
             return RedirectToAction("Read", new { id = page });
         }
+
         [HttpGet]
         public IActionResult SelectRead()
         {
-
             return View();
         }
-
 
         [HttpGet]
         public IActionResult Creating(int id)
         {
-
             return View(Sex.sexTypes());
         }
 
