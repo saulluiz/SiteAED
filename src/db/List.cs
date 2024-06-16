@@ -89,7 +89,7 @@ public class Lista
 
     public void Imprimir()
     {
-        this.Map(cell => Console.WriteLine(cell.value));
+        this.Map(cell => Console.WriteLine(FileModifier.PeopleToLine(cell.value)));
     }
 
     public PeopleModel Remove(int pos)
@@ -193,6 +193,8 @@ public class Lista
 
     public bool Update(PeopleModel people)
     {
+        Console.WriteLine("people.UserId: " + people.UserId);
+        Console.WriteLine("people.Index: " + people.Index);
         int pos = 0;
         Celula first = primeiro.prox;
 
@@ -201,8 +203,10 @@ public class Lista
             if (first.value.UserId == people.UserId)
             {
                 first.value = people;
+
                 return true;
             }
+            Console.WriteLine("Posição: " + pos);
             first = first.prox;
             pos++;
         };

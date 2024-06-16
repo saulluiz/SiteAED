@@ -35,7 +35,7 @@ namespace TrabalhoAed.Controllers
         public IActionResult Read(int id)
         {
             FileModifier.ReadFile(PeopleFiles.GetFile(id));
-
+            
             return View(new { page = id, LIST = DB.LIST });
         }
 
@@ -75,6 +75,7 @@ namespace TrabalhoAed.Controllers
         [HttpGet]
         public IActionResult SelectRead()
         {
+
             return View();
         }
 
