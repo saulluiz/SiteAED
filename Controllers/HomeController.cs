@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using site_aed.Enums;
+using site_aed.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Linq.Expressions;
@@ -38,6 +39,21 @@ namespace TrabalhoAed.Controllers
 
             return View(new { page = id, LIST = DB.LIST });
         }
+        [HttpPost]
+        public IActionResult Read(int id ,[FromForm] SearchModel query)
+        {
+
+            Lista l1=new Lista();
+            l1.Add(DB.LIST.search(query.value));
+            Console.WriteLine(query.valueType);
+            //enviar uma lista a pagina utilizando o metodo de pesquisa otimizado (Serach ainda é sequencial)
+            //sugestao: Criar metodo que receba os parametros do tipo da pesquisa e do valor da pesquisa e ,a partir disso
+            //retorne uma lista [Essa lista deve ser passada para View abaixo, com os parametros dentro do objeto
+
+
+            return View(new { page = id, LIST = l1 });
+        }
+
 
         [HttpGet]
         public IActionResult Delete(string id)

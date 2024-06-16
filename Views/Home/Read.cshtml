@@ -7,6 +7,20 @@
     <a type="button" id="sort" asp-controller="Home" asp-action="Ordenar" asp-route-id="@Model.page?LastName">LastName</a>
         <a type="button" id="sort" asp-controller="Home" asp-action="Ordenar" asp-route-id="@Model.page?JobTitle">JobTitle</a>
     </div>
+    <form asp-action="Read" asp-route-id=@Model.page>
+        <label for="value">Pesquisa </label>
+        <input name="value" type="text" />
+        
+        <input type="submit" name="name" value="" />
+
+
+        <select name="valueType">
+
+            <option value="UserId">User ID</option>
+            <option value="email">Email</option>
+        </select>
+
+    </form>
 
     <table class="table">
         <thead>
