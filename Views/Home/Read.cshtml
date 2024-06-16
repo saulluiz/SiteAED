@@ -40,13 +40,15 @@
             <tr>
                 @{
                     int i = 0;
-                    while (Model.LIST.Count != i)
+                    var celula = Model.LIST.primeiro.prox;
+                    while (celula!=null)
 
                     {
-                        var person = Model.LIST[i];
-                        i++;
+                        var person = celula.value;
+                        celula = celula.prox;
+                     
                     <tr>
-                        <td class="td">@i</td>
+                        <td class="td">@person.Index</td>
                         <td class="td">@person.UserId</td>
                         <td class="td">@person.FirstName</td>
                         <td class="td">@person.LastName</td>
