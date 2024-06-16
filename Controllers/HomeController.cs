@@ -108,7 +108,7 @@ namespace TrabalhoAed.Controllers
         {
             var arr = id.Split("?");
             string page = arr[0];
-            string parametroOrdenacao = arr[1];
+            string parametroOrdenacao = arr[arr.Length-1];
          
             FileModifier.ReadFile(PeopleFiles.GetFile(int.Parse(page)));
 
@@ -120,13 +120,11 @@ namespace TrabalhoAed.Controllers
                 case "LastName":
                     DB.LIST.Sort((p) => p.LastName);
                     break;
-                case "Job Title":
-                    //code Block
-                    break;
+                
             }
 
             DB.LIST.Imprimir();
-            return View("read", new { page = id, LIST = DB.LIST });
+            return View("Read", new { page = id, LIST = DB.LIST });
         }
 
         [HttpPost]
