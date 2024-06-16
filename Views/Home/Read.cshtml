@@ -1,29 +1,32 @@
-﻿
-
-<div id="PaginaLeitura">
+﻿<div id="PaginaLeitura">
     <div class="container">
-    <div id="Ordenadores">
-        <h2>Ordenar por:</h2>
-        <a type="button" id="sort" asp-controller="Home" asp-action="Ordenar" asp-route-id="@Model.page?FirstName">FirstName <i class="bi bi-list-ul"></i></a>
-    <a type="button" id="sort" asp-controller="Home" asp-action="Ordenar" asp-route-id="@Model.page?LastName">LastName</a>
-       
-    </div>
-    <div class="pesquisa">
+        <div class="Ordenadores">
+            <h2>Ordenar por:</h2>
+            <div class="sortDiv">
+                <a type="button" id="sort" asp-controller="Home" asp-action="Ordenar"
+                   asp-route-id="@Model.page?FirstName">FirstName <i class="bi bi-list-ul"></i></a>
+                <a type="button" id="sort" asp-controller="Home" asp-action="Ordenar"
+                   asp-route-id="@Model.page?LastName">LastName</a>
+                
+            </div>
+        </div>
+        <div class="pesquisa">
+            <form asp-action="Read" asp-route-id=@Model.page class="formulario">
+                <div>
+                <label for="value">Pesquisa </label>
+                <input name="value" type="text" />
 
-    <form asp-action="Read" asp-route-id=@Model.page>
-        <label for="value">Pesquisa </label>
-        <input name="value" type="text" />
-        
-        <input type="submit" name="name" value="" />
 
+                <select name="valueType">
 
-        <select name="valueType">
+                    <option value="UserId">User ID</option>
+                    <option value="email">Email</option>
+                </select>
 
-            <option value="UserId">User ID</option>
-            <option value="email">Email</option>
-        </select>
+                </div>
+                <input type="submit" name="name" value="Confimar" />
 
-    </form>
+            </form>
     </div>
     </div>
 

@@ -287,10 +287,12 @@ body {
 #Ordenadores h2 {
     font-size: 25px;
     justify-items: center;
+
 }
 
 .Ordenadores {
     display: flex;
+   align-items:space-around;
     width: 350px;
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -317,6 +319,7 @@ body {
     text-align: center;
     align-items: center;
     align-content: center;
+    
     justify-content: center;
     padding: 6px 14px;
     width: 200px;
@@ -349,15 +352,25 @@ body {
 
 .pesquisa {
     display: flex;
+   height:200px;
     width: 350px;
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     padding: 20px;
     margin-right: 20px;
-    height: 200px;
+    
     font-family: fantasy;
     justify-content: space-around;
-    align-content: center;
+    align-items: center;
+}
+.pesquisa form{
+    display:flex;
+    height:200px;
+    flex-direction:column;
+    justify-content:space-around;
+}
+.pesquisa form input{
+    height:35px;
 }
 
 #conf {
@@ -368,4 +381,14 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+.sortDiv{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    height:300px;
+    align-items:center;
+}
+.sort{
+    margin:15px;
 }
