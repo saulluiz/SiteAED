@@ -100,14 +100,17 @@ static class FileModifier
     public static void ReWriteFile(string file, PeopleModel[] peoples)
     {
         string pathToFile = PATH_TO_FILES + file;
+        string firstLine = File.ReadLines(pathToFile).FirstOrDefault();
+
         File.Delete(pathToFile);
 
         using StreamWriter sw = new StreamWriter(pathToFile);
+
+        if (firstLine != null)
+            sw.WriteLine(firstLine);
+
         for (int i = 0; i < peoples.Length; i++)
-        {
             sw.WriteLine(PeopleToLine(peoples[i]));
-        }
-        
     }
 
     public static void RemoveSpecificLine(string filePath, Func<string, bool> lineCondition)
