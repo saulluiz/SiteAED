@@ -71,7 +71,7 @@ namespace TrabalhoAed.Controllers
         {
             var arr = id.Split("?");
             string page = arr[0];
-            string peopleToUpdate = arr[1];
+            string peopleToUpdate = arr[arr.Length-1];
             
             return View(new { page = page, people = peopleToUpdate }); ;
         }
@@ -82,7 +82,7 @@ namespace TrabalhoAed.Controllers
         {
             var arr = id.Split("?");
             string page = arr[0];
-            string peopleToUpdate = arr[1];
+            string peopleToUpdate = arr[arr.Length-1];
             Console.WriteLine("Editando pessoa " + pessoa.FirstName + " " + peopleToUpdate);
      
             DB.Update(pessoa, int.Parse(page));
