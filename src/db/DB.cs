@@ -2,6 +2,8 @@ public static class DB
 {
     public static Lista LIST = new Lista();
     private const int PAGE_SIZE = 10;
+    public static string CurrentFile;
+    
 
     public static void Create(PeopleModel pessoa, int file)
     {

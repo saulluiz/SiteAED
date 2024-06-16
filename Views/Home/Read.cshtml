@@ -5,8 +5,22 @@
         <h2>Ordenar por:</h2>
         <a type="button" id="sort" asp-controller="Home" asp-action="Ordenar" asp-route-id="@Model.page?FirstName">FirstName <i class="bi bi-list-ul"></i></a>
     <a type="button" id="sort" asp-controller="Home" asp-action="Ordenar" asp-route-id="@Model.page?LastName">LastName</a>
-        <a type="button" id="sort" asp-controller="Home" asp-action="Ordenar" asp-route-id="@Model.page?JobTitle">JobTitle</a>
+       
     </div>
+    <form asp-action="Read" asp-route-id=@Model.page>
+        <label for="value">Pesquisa </label>
+        <input name="value" type="text" />
+        
+        <input type="submit" name="name" value="" />
+
+
+        <select name="valueType">
+
+            <option value="UserId">User ID</option>
+            <option value="email">Email</option>
+        </select>
+
+    </form>
 
     <table class="table">
         <thead>
@@ -26,20 +40,22 @@
             <tr>
                 @{
                     int i = 0;
-                    while (Model.LIST.Count != i)
+                    var celula = Model.LIST.primeiro.prox;
+                    while (celula!=null)
 
                     {
-                        var person = Model.LIST[i];
-                        i++;
+                        var person = celula.value;
+                        celula = celula.prox;
+                     
                     <tr>
-                        <td class="td">@i</td>
+                        <td class="td">@person.Index</td>
                         <td class="td">@person.UserId</td>
                         <td class="td">@person.FirstName</td>
                         <td class="td">@person.LastName</td>
                         <td class="td">@person.Sex</td>
                         <td class="td">@person.Email</td>
                         <td class="td">@person.Phone</td>
-                        <td class="td">09/06/1954</td>
+                        <td class="td">@person.DateOfBirth.ToString("yyyy-MM-ddTHH").Remove(10, 3)</td>
                         <td class="td">@person.JobTitle</td>
                         <td>
                             <a type="button" id="edit" asp-controller="Home" asp-action="UpdatePage" asp-route-id="@Model.page?@person.UserId">Edit</a>

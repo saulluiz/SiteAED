@@ -48,8 +48,8 @@
 
             <div>
                 <div
-                    <label for="DateOfBirth">Date of birth: </label>
-                    <input name="DateOfBirth" type="date"  value=@person.DateOfBirth/>
+                    <label for="DateOfBirth">Date of birth:  value=@person.DateOfBirth.ToString("yyyy-MM-ddTHH").Remove(10, 3)</label>
+                    <input name="DateOfBirth" type="date"  value="@person.DateOfBirth.ToString("yyyy-MM-ddTHH").Remove(10, 3)"/>
                 </div>
                 <div
                     <label for="Sex">Sex:</label>
