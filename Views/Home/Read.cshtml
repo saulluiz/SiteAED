@@ -53,7 +53,7 @@
                         <td class="td">@person.Sex</td>
                         <td class="td">@person.Email</td>
                         <td class="td">@person.Phone</td>
-                        <td class="td">09/06/1954</td>
+                        <td class="td">@person.DateOfBirth.ToString("yyyy-MM-ddTHH").Remove(10, 3)</td>
                         <td class="td">@person.JobTitle</td>
                         <td>
                             <a type="button" id="edit" asp-controller="Home" asp-action="UpdatePage" asp-route-id="@Model.page?@person.UserId">Edit</a>
