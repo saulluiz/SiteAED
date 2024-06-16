@@ -109,7 +109,6 @@ namespace TrabalhoAed.Controllers
                     break;
             }
 
-            DB.LIST.Imprimir();
             return View("read", new { page = id, LIST = DB.LIST });
         }
 
