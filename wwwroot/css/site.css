@@ -406,4 +406,20 @@ li:hover{
 }
 #explicacao{
     font-size:15px;
+
+}
+#resume {
+    padding: 20px;
+    border: 1px solid black;
+    font-size: 20px;
+    background-color: var(--cor2);
+    margin-bottom: 50px;
+    margin-top: 50px;
+    font-family: Arial;
+   
+}
+#referencia{
+    font-family:Arial;
+    font-weight:200;
+
 }
