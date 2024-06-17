@@ -392,3 +392,18 @@ body {
 .sort{
     margin:15px;
 }
+#titulo{
+    font-family:fantasy
+}
+li{
+    font-family:fantasy;
+    font-weight:200;
+}
+li:hover{
+    
+    background-color:antiquewhite;
+    border-radius:6px;
+}
+#explicacao{
+    font-size:15px;
+}
