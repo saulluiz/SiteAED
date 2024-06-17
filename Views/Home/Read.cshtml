@@ -6,29 +6,28 @@
                 <a type="button" id="sort" asp-controller="Home" asp-a ction="Ordenar"
                    asp-route-id="@Model.page?FirstName">FirstName <i class="bi bi-list-ul"></i></a>
                 <a type="button" id="sort" asp-controller="Home" asp-action="Ordenar"
-                   asp-route-id="@Model.page?LastName">LastName</a> <a type="button" id="sort" asp-controller="Home" asp-action="Read"
-                   >Index</a>
-                
+                   asp-route-id="@Model.page?LastName">LastName</a> <a type="button" id="sort" asp-controller="Home" asp-action="Read">Index</a>
+
             </div>
         </div>
         <div class="pesquisa">
             <form asp-action="Read" asp-route-id=@Model.page class="formulario">
                 <div>
-                <label for="value">Pesquisa </label>
-                <input name="value" type="text" />
+                    <label for="value">Pesquisa </label>
+                    <input name="value" type="text" />
 
 
-                <select name="valueType">
+                    <select name="valueType">
 
-                    <option value="UserId">User ID</option>
-                    <option value="email">Email</option>
-                </select>
+                        <option value="UserId">User ID</option>
+                        <option value="email">Email</option>
+                    </select>
 
                 </div>
                 <input type="submit" name="name" value="Confimar" />
 
             </form>
-    </div>
+        </div>
     </div>
 
     <table class="table">
@@ -48,32 +47,35 @@
 
             <tr>
                 @{
-                    
+
                     var celula = Model.LIST.primeiro.prox;
-                    while (celula!=null)
+
+                    while (celula != null)
 
                     {
                         var person = celula.value;
+                        if (celula.value != null)
+                        {
+                        <tr>
+                            <td class="td">@person.Index</td>
+                            <td class="td">@person.UserId</td>
+                            <td class="td">@person.FirstName</td>
+                            <td class="td">@person.LastName</td>
+                            <td class="td">@person.Sex</td>
+                            <td class="td">@person.Email</td>
+                            <td class="td">@person.Phone</td>
+                            <td class="td">@person.DateOfBirth.ToString("yyyy-MM-ddTHH").Remove(10, 3)</td>
+                            <td class="td">@person.JobTitle</td>
+                            <td>
+                                <a type="button" id="edit" asp-controller="Home" asp-action="UpdatePage" asp-route-id="@Model.page?@person.UserId">Edit</a>
+                                <a type="button" id="delete" asp-controller="Home" asp-action="Delete" asp-route-id="@Model.page?@person.UserId"> Delete </a>
+
+                            </td>
+
+
+                        </tr>
+                        }
                         celula = celula.prox;
-                     
-                    <tr>
-                        <td class="td">@person.Index</td>
-                        <td class="td">@person.UserId</td>
-                        <td class="td">@person.FirstName</td>
-                        <td class="td">@person.LastName</td>
-                        <td class="td">@person.Sex</td>
-                        <td class="td">@person.Email</td>
-                        <td class="td">@person.Phone</td>
-                        <td class="td">@person.DateOfBirth.ToString("yyyy-MM-ddTHH").Remove(10, 3)</td>
-                        <td class="td">@person.JobTitle</td>
-                        <td>
-                            <a type="button" id="edit" asp-controller="Home" asp-action="UpdatePage" asp-route-id="@Model.page?@person.UserId">Edit</a>
-                            <a type="button" id="delete" asp-controller="Home" asp-action="Delete" asp-route-id="@Model.page?@person.UserId"> Delete </a>
-
-                        </td>
-
-
-                    </tr>
                     }
                 }
             </tr>
