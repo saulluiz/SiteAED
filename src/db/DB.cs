@@ -7,7 +7,7 @@ public static class DB
 
     public static void Create(PeopleModel pessoa, int file)
     {
-        pessoa.Index = LIST.Index;
+        pessoa.Index = LIST.ultimo.value.Index+1;
         pessoa.DateOfBirth = pessoa.DateOfBirth.Date;
         LIST.Add(pessoa);
         FileModifier.Create(PeopleFiles.GetFile(file), pessoa);
